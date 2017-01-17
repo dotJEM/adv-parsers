@@ -1,4 +1,5 @@
 version: 0.1.{build}
+nugetver: version
 
 configuration: Release
 
@@ -14,8 +15,8 @@ nuget:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: '0.0.{build}'
-  assembly_file_version: '0.0.{build}'
+  assembly_version: '{nugetver}'
+  assembly_file_version: '{nugetver}'
   assembly_informational_version: '{version}'
 
 matrix:
