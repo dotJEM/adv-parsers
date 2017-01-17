@@ -1,5 +1,7 @@
 version: 0.1.{build}
-set nuget_ver: {version}
+
+environment:
+  nuget_ver: {version}
 
 configuration: Release
 
