@@ -6,7 +6,7 @@ install:
 - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/install-nuget-3-3-0.ps1'))
 
 init:
-- ps: $env:nuget_ver="($env:appveyor_build_version)"
+- ps: $env:nuget_ver=$env:appveyor_build_version
 - ps: Update-AppveyorBuild -Version "$env:appveyor_build_version-sha.$($env:appveyor_repo_commit.substring(0,7))"
 
 nuget:
