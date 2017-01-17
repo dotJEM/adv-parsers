@@ -22,6 +22,7 @@ namespace DotJEM.AdvParsers
         /// that means that a valid format could be '5 gigabytes 512 bytes' as well as '3kb', and spaces are alowed between each value and it's unit definition.
         /// <p/>The folowing units are known.
         /// <table>
+        /// <tr><td>Terabytes</td><td>tb, terabyte, terabytes</td></tr>
         /// <tr><td>Gigabytes</td><td>gb, gigabyte, gigabytes</td></tr>
         /// <tr><td>Megabytes</td><td>mb, megabyte, megabytes</td></tr>
         /// <tr><td>Kilobytes</td><td>kb, kilobyte, kilobytes</td></tr>
@@ -29,7 +30,7 @@ namespace DotJEM.AdvParsers
         /// </table>
         /// <p/>All Unit definitions ignores any casing.
         /// </remarks>
-        /// <param name="input">A string representing a total number of bytes as Gigabytes, Megabytes, Kilobytes and Bytes.</param>
+        /// <param name="input">A string representing a total number of bytes as Terabytes, Gigabytes, Megabytes, Kilobytes and Bytes.</param>
         /// <param name="value">If success, this holds the <see cref="long"/> calculated as the total number of bytes from the given input.</param>
         /// <returns>true if parsing was successfull, otherwise false.</returns>
         /// <example>
