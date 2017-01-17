@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("dotJEM.AdvParsers")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Small package of a few parsers I have reused on multiple occasions by now.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("dotJEM.AdvParsers")]
