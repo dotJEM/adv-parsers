@@ -17,8 +17,8 @@ nuget:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: $(nuget_ver)
-  assembly_file_version: $(nuget_ver)
+  assembly_version: '$(nuget_ver)'
+  assembly_file_version: '$(nuget_ver)'
   assembly_informational_version: '{version}'
 
 matrix:
