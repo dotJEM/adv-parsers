@@ -11,8 +11,7 @@ nuget:
   
 dotnet_csproj:
   patch: true
-  file: '**\DotJEM.AdvParsers.csproj'
-  version: '{version}'
+  file: '**\*.csproj'
   package_version: '1.0.{build}'
   assembly_version: '1.0.{build}'
   file_version: '1.0.{build}'
@@ -27,8 +26,8 @@ pull_requests:
   do_not_increment_build_number: true
 
 before_build:
-  - cmd: dotnet restore dotJEM.AdvParsers\DotJEM.AdvParsers\DotJEM.AdvParsers.csproj
-  - cmd: nuget restore dotJEM.AdvParsers\dotJEM.AdvParsers.sln
+  - cmd: dotnet restore dotJEM.AdvParsers\DotJEM.AdvParsers\DotJEM.AdvParsers.csproj # Restores .NET Standard
+  - cmd: nuget restore dotJEM.AdvParsers\dotJEM.AdvParsers.sln # Restores .NET Framework (For Test Project)
 
 build:
   project: dotJEM.AdvParsers\dotJEM.AdvParsers.sln
