@@ -12,6 +12,7 @@ nuget:
 dotnet_csproj:
   patch: true
   file: '**\DotJEM.AdvParsers.csproj'
+  version: '{version}'
   package_version: '1.0.{build}'
   assembly_version: '1.0.{build}'
   file_version: '1.0.{build}'
