@@ -12,6 +12,7 @@
     <RepositoryType>git</RepositoryType>
     <Company>N/A</Company>
     <Authors>DotJEM</Authors>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
 </Project>
