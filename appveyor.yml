@@ -1,9 +1,6 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 
-environment:
-  simver: 1.0.{build}
-
 configuration: Release
 
 install:
@@ -17,10 +14,10 @@ nuget:
   
 dotnet_csproj:
   patch: true
-  file: '**\DotJEM.AdvParsers.csproj'
-  package_version: '{simver}'
-  assembly_version: '{simver}'
-  file_version: '{simver}'
+  file: '**/DotJEM.AdvParsers.csproj'
+  package_version: '1.0.{build}'
+  assembly_version: '1.0.{build}'
+  file_version: '1.0.{build}'
   informational_version: '{version}'
 
 matrix:
@@ -39,9 +36,6 @@ build:
   project: dotJEM.AdvParsers\dotJEM.AdvParsers.sln
   publish_nuget: true
   publish_nuget_symbols: true
-  
-after_build:
-  dir
 
 test:
   assemblies:
