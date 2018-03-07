@@ -1,4 +1,5 @@
-version: 0.1.{build}
+version: 0.2.{build}
+image: Visual Studio 2017
 
 configuration: Release
 
@@ -9,15 +10,19 @@ init:
 - ps: $env:nuget_ver=$env:appveyor_build_version
 - ps: Update-AppveyorBuild -Version "$env:appveyor_build_version+sha.$($env:appveyor_repo_commit.substring(0,7))"
 
+environment:
+  simver: 0.2.{build}
+
 nuget:
   disable_publish_on_pr: true
-
-assembly_info:
+  
+dotnet_csproj:
   patch: true
-  file: AssemblyInfo.*
-  assembly_version: $(nuget_ver)
-  assembly_file_version: $(nuget_ver)
-  assembly_informational_version: '{version}'
+  file: '**\*.csproj'
+  package_version: '{simver}'
+  assembly_version: '{simver}'
+  file_version: '{simver}'
+  informational_version: '{version}'
 
 matrix:
   fast_finish: true # fail fast!
@@ -28,7 +33,8 @@ pull_requests:
   do_not_increment_build_number: true
 
 before_build:
-  nuget restore dotJEM.AdvParsers\dotJEM.AdvParsers.sln
+  - cmd: dotnet restore dotJEM.AdvParsers\DotJEM.AdvParsers\DotJEM.AdvParsers.csproj
+  - cmd: nuget restore dotJEM.AdvParsers\dotJEM.AdvParsers.sln
 
 build:
   project: dotJEM.AdvParsers\dotJEM.AdvParsers.sln

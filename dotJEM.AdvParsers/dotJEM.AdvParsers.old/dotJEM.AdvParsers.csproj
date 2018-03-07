@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F10BF342-505C-4EFB-B023-872A47E08899}</ProjectGuid>
+    <ProjectGuid>{78D46DCA-B6C0-4626-B44D-6E5D6A561A92}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DotJEM.AdvParsers.Test</RootNamespace>
-    <AssemblyName>DotJEM.AdvParsers.Test</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <RootNamespace>DotJEM.AdvParsers</RootNamespace>
+    <AssemblyName>DotJEM.AdvParsers</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,21 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ByteCountParserTests\ByteCountParserTest.cs" />
+    <Compile Include="AdvParser.cs" />
+    <Compile Include="ByteCountParser.cs" />
+    <Compile Include="AbstractParser.cs" />
+    <Compile Include="IParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TimeSpanParserTests\TimeSpanParserTest_FullFormats.cs" />
-    <Compile Include="TimeSpanParserTests\TimeSpanParserTest_Overflows.cs" />
-    <Compile Include="TimeSpanParserTests\TimeSpanParserTest_SingleFormats.cs" />
-    <Compile Include="TimeSpanParserTests\TimeSpanParserTest_TimeSpanParseableFormats.cs" />
+    <Compile Include="RegexGroupExt.cs" />
+    <Compile Include="TimeSpanParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DotJEM.AdvParsers\DotJEM.AdvParsers.csproj">
-      <Project>{C41026E8-ACA7-4717-93E3-737FD14956E7}</Project>
-      <Name>DotJEM.AdvParsers</Name>
-    </ProjectReference>
+    <None Include="dotJEM.AdvParsers.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
