@@ -10,16 +10,14 @@ install:
 - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/install-nuget-3-3-0.ps1'))
 
 init:
-- ps: $env:nuget_ver=$env:simver
 - ps: Update-AppveyorBuild -Version "$env:appveyor_build_version+sha.$($env:appveyor_repo_commit.substring(0,7))"
-
 
 nuget:
   disable_publish_on_pr: true
   
 dotnet_csproj:
   patch: true
-  file: 'dotJEM.AdvParsers\DotJEM.AdvParsers\DotJEM.AdvParsers.csproj'
+  file: '**\DotJEM.AdvParsers.csproj'
   package_version: '{simver}'
   assembly_version: '{simver}'
   file_version: '{simver}'
