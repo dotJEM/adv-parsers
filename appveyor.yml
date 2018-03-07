@@ -17,7 +17,7 @@ nuget:
   
 dotnet_csproj:
   patch: true
-  file: '**\*.csproj'
+  file: 'dotJEM.AdvParsers\DotJEM.AdvParsers\DotJEM.AdvParsers.csproj'
   package_version: '{simver}'
   assembly_version: '{simver}'
   file_version: '{simver}'
