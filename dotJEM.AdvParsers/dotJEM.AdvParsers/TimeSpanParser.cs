@@ -3,6 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace DotJEM.AdvParsers
 {
+    /// <summary>
+    /// Parser used to convert strings to timespans with an extended set of supported formats compared to the build-in formats, <see cref="TryParse"/> for details on formats supported by this parser.
+    /// </summary>
     public class TimeSpanParser : AbstractParser<TimeSpan>
     {
         private static readonly Regex timeSpanExpression = new Regex(
@@ -14,14 +17,14 @@ namespace DotJEM.AdvParsers
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         /// <summary>
-        /// Atempts to convert a string to a <see cref="TimeSpan"/>.
+        /// Attempts to convert a string to a <see cref="TimeSpan"/>.
         /// </summary>
         /// <remarks>
-        /// The method first attempts to use the normal <see cref="TimeSpan.Parse"/> method, if that fails it then usesuses a range of wellknown formats
-        /// to atempt a conversion of a string representing a <see cref="TimeSpan"/>.
+        /// The method first attempts to use the normal <see cref="TimeSpan.Parse"/> method, if that fails it then uses a range of well-known formats
+        /// to attempt a conversion of a string representing a <see cref="TimeSpan"/>.
         /// <p/>The order of which the values are defined must always be "Days, Hours, Minutes, Seconds and Fractions" But non of them are required,
-        /// that means that a valid format could be '5 days 30 min' as well as '3h', and spaces are alowed between each value and it's unit definition.
-        /// <p/>The folowing units are known.
+        /// that means that a valid format could be '5 days 30 min' as well as '3h', and spaces are allowed between each value and it's unit definition.
+        /// <p/>The following units are known.
         /// <table>
         /// <tr><td>Days</td><td>d, day, days</td></tr>
         /// <tr><td>Hours</td><td>h, hour, hours</td></tr>
@@ -33,7 +36,7 @@ namespace DotJEM.AdvParsers
         /// </remarks>
         /// <param name="input">A string representing a <see cref="TimeSpan"/>.</param>
         /// <param name="value">If success, this holds the parsed <see cref="TimeSpan"/></param>
-        /// <returns>true if parsing was successfull, otherwise false.</returns>
+        /// <returns>true if parsing was successful, otherwise false.</returns>
         /// <example>
         /// This piece of code first parses the string "2m 30s" to a <see cref="TimeSpan"/> and then uses that <see cref="TimeSpan"/> to sleep for 2 minutes and 30 seconds.
         /// <code>
@@ -60,11 +63,11 @@ namespace DotJEM.AdvParsers
             if (!match.Success)
                 return false;
 
-            int days = match.Groups["d"].ParseGroup();
-            int hours = match.Groups["h"].ParseGroup();
-            int minutes = match.Groups["m"].ParseGroup();
-            int seconds = match.Groups["s"].ParseGroup();
-            int milliseconds = match.Groups["f"].ParseGroup();
+            int days = match.Groups["d"].ParseGroupAsInt32();
+            int hours = match.Groups["h"].ParseGroupAsInt32();
+            int minutes = match.Groups["m"].ParseGroupAsInt32();
+            int seconds = match.Groups["s"].ParseGroupAsInt32();
+            int milliseconds = match.Groups["f"].ParseGroupAsInt32();
             value = new TimeSpan(days, hours, minutes, seconds, milliseconds);
             return true;
         }

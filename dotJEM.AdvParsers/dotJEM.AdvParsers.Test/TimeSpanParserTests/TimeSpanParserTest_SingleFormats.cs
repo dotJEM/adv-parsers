@@ -41,9 +41,11 @@ namespace DotJEM.AdvParsers.Test.TimeSpanParserTests
 
         [TestCase("30m", 30)]
         [TestCase("21min", 21)]
+        [TestCase("42minute", 42)]
         [TestCase("42minutes", 42)]
         [TestCase("25 m", 25)]
         [TestCase("3 min", 3)]
+        [TestCase("8 minute", 8)]
         [TestCase("8 minutes", 8)]
         public void Parse_ValidMinutes_ReturnsTimespan(string value, int minutes)
         {

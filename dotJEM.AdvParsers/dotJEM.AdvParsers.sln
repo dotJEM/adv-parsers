@@ -7,10 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotJEM.AdvParsers.Test", "d
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{693D4F02-5051-4ED0-8593-2E6F9827FE42}"
 	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
 		..\appveyor.yml = ..\appveyor.yml
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotJEM.AdvParsers", "DotJEM.AdvParsers\DotJEM.AdvParsers.csproj", "{C41026E8-ACA7-4717-93E3-737FD14956E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotJEM.AdvParsers", "DotJEM.AdvParsers\DotJEM.AdvParsers.csproj", "{C41026E8-ACA7-4717-93E3-737FD14956E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

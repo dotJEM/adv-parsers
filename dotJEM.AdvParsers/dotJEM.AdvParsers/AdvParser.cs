@@ -2,6 +2,9 @@
 
 namespace DotJEM.AdvParsers
 {
+    /// <summary>
+    /// Static parser class providing quick access to the different parser implementations contained in this package.
+    /// </summary>
     public static class AdvParser
     {
         private static readonly IParser<TimeSpan> timespanParser = new TimeSpanParser();
