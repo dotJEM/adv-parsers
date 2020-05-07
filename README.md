@@ -1,3 +1,6 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/3gvk0o9id7ctlywk/branch/master?svg=true)](https://ci.appveyor.com/project/jeme/adv-parsers/branch/master)
+[![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/dotJEM/adv-parsers/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/dotJEM/adv-parsers/branches/master)
+
 # adv-parsers
 Small package of a few simple parsers I have reused on multiple occasions by now. 
 
