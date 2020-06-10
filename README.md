@@ -1,5 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/3gvk0o9id7ctlywk/branch/master?svg=true)](https://ci.appveyor.com/project/jeme/adv-parsers/branch/master)
 [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/dotJEM/adv-parsers/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/dotJEM/adv-parsers/branches/master)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FdotJEM%2Fadv-parsers.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FdotJEM%2Fadv-parsers?ref=badge_shield)
 
 # adv-parsers
 Small package of a few simple parsers I have reused on multiple occasions by now. 
@@ -76,3 +77,7 @@ The following sections has examples of supported inputs for the parser.
 | `2 gigabytes` | `2 * 1024 * 1024 * 1024` | 
 | `2mb 512kb` | `( ( 2 * 1024 ) + 512 ) * 1024` | 
 | `4gb 16mb 32kb 64b` | `( ( ( ( ( 4 * 1024 ) + 16 ) * 1024 ) + 32 ) * 1024 ) + 64 ) * 1024` | 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FdotJEM%2Fadv-parsers.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FdotJEM%2Fadv-parsers?ref=badge_large)
